@@ -1,1 +1,530 @@
-Hello World
+<!DOCTYPE html>
+<html>
+
+<!-- Sorry, nothing to help you here. -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GC69B73: Datavetenskap i Umeå</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script type="text/javascript" src="gc69b73.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="gc69b73.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>GC69B73: Datavetenskap i Umeå</h1>
+            <p>Välkommen till vår skola! När du svarat på alla frågorna beräknar du koordinaterna <a href="#done">längst ner</a>. OBS! Dina svar sparas <em>inte</em> på den här sidan, de försvinner när du laddar om den!</p>
+        </div>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">År 1<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#programmeringsfärdighet-i-ett-imperativt-språk-c">Programmeringsfärdighet i ett imperativt språk – C</a></li>
+                                <li><a href="#analys-i-en-variabel">Analys i en variabel</a></li>
+                                <li><a href="#datastrukturer-och-algoritmer">Datastrukturer och algoritmer</a></li>
+                                <li><a href="#diskret-matematik">Diskret matematik</a></li>
+                                <li><a href="#programmeringsfärdighet-i-ett-objektorienterat-spåk-java">Programmeringsfärdighet i ett objektorienterat språk – Java</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">År 2<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#systemnära-programmering">Systemnära programmering</a></li>
+                                <li><a href="#matematisk-statistik">Matematisk statistik</a></li>
+                                <li><a href="#datorteknik">Datorteknik</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">År 3<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#datorkommunikation">Datorkommunikation</a></li>
+                                <li><a href="#linjär-algebra">Linjär algebra</a></li>
+                                <li><a href="#datorarkitektur">Datorarkitektur</a></li>
+                                <li><a href="#numeriska-beräkningar">Numeriska beräkningar</a></li>
+                                <li><a href="#programmeringsfärdighet-i-ett-funktionellt-språk-haskell">Programmeringsfärdighet i ett funktionellt språk – Haskell</a></li>
+                                <li><a href="#programvaruteknik">Programvaruteknik</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#done">Beräkna koordinater</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- År 1 -->
+        <section>
+            <!-- C -->
+            <h2 id="programmeringsfärdighet-i-ett-imperativt-språk-c">Programmeringsfärdighet i ett imperativt språk – C</h2>
+
+            <p>För att verkligen se till att studenterna förstår sig på referenser, villkor, loopar, jämförelser &amp; funktioner så kan man skriva onödigt svårförstådd kod. Och svårförstådd kod är precis vad nedanstående är.
+                <label>Vilket returvärde ger anropet <code>cache(90, 11)</code>?
+                    <input type=number name=c>
+                </label>
+            </p>
+
+
+
+            <pre class="prettyprint"><code class="language-c hljs "><span class="hljs-keyword">int</span> cache(<span class="hljs-keyword">int</span> coords, <span class="hljs-keyword">int</span> terrain) {
+	<span class="hljs-keyword">int</span> difficulty, hidden, owner;
+	difficulty = coords % terrain;
+	hidden = terrain + difficulty;
+	<span class="hljs-keyword">if</span> ((coords / difficulty) &gt; difficulty) {
+		difficulty++;
+	}
+	<span class="hljs-keyword">for</span> (owner = hidden; owner &gt;= difficulty; owner--) {
+		hidden--;
+	}
+	<span class="hljs-keyword">return</span> hidden;
+}</code></pre>
+        </section>
+
+        <section>
+            <!-- Analys -->
+            <h2 id="analys-i-en-variabel">Analys i en variabel</h2>
+
+            <p>Scared_of_heights registrerade just ett konto på <a href="https://www.geocaching.com/" target="_blank">geocaching.com</a>. Om Scared_of_heights följer ett mönster, som man tidigare sett ofta förekommer, så kommer höjden
+                <script type="math/tex" id="MathJax-Element-201">h</script> på de cachar Scared_of_heights tar enbart bero av vilken cache
+                <script type="math/tex" id="MathJax-Element-202">c</script> i ordningen den är.
+                <br>
+                <script type="math/tex; mode=display" id="MathJax-Element-203">h\left(c\right)=e^{c/2}</script>
+            </p>
+
+            <p>
+                <label>Approximera
+                    <script type="math/tex" id="MathJax-Element-204">h\left(3\right)</script> med hjälp av Taylorpolynomet av grad 2 kring
+                    <script type="math/tex" id="MathJax-Element-205">c=2</script>. Avrundat till tre värdesiffror:
+                    <input type=number name=analys>
+                </label>
+            </p>
+        </section>
+
+        <section>
+            <!-- DoA -->
+            <h2 id="datastrukturer-och-algoritmer">Datastrukturer och algoritmer</h2>
+
+            <p>Para ihop nedanstående datatyper med den data de bör innehålla. För varje par, multiplicera deras värden och summera sedan parens värden.
+                <label>Vilket värde får du då?
+                    <input type=number name=doa>
+                </label>
+            </p>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <a href="doa.svg" target="_blank"><img src="doa.svg" alt="Datatyper och data" class="img-responsive"></a>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Diskmatte -->
+            <h2 id="diskret-matematik">Diskret matematik</h2>
+
+            <p>Inför en resa sitter ni och planerar vilka cachar som ni vill ta under resan. Innan ni anländer till ert huvudresmål, där det givetvis arrangeras ett GIGA-Event, väljer ni att stanna till i Kombinationsstaden. Ni ser att i Kombinationsstaden finns det:</p>
+
+            <ul>
+                <li>10 st <img src="trad.gif" alt="Traditional">,</li>
+                <li>3 st <img src="myst.gif" alt="Mystery">,</li>
+                <li>2 st <img src="multi.gif" alt="Multi"> samt</li>
+                <li>2 st <img src="event.gif" alt="Event"> som pågår medan ni är där.</li>
+            </ul>
+
+            <p>Utifrån er tidigare erfarenhet (det ryktas att man inte <em>bara</em> ska geocacha på semester) vet ni att det är möjligt att ta:</p>
+
+            <ul>
+                <li>5 st <img src="trad.gif" alt="Traditional">,</li>
+                <li>1 st <img src="myst.gif" alt="Mystery"> och</li>
+                <li>1 st <img src="multi.gif" alt="Multi"> eller</li>
+                <li>3 st <img src="trad.gif" alt="Traditional"> och</li>
+                <li>1 st <img src="event.gif" alt="Event">.</li>
+            </ul>
+
+            <p>När er kompis, som just har tentat av en kurs i diskret matematik, kikar in i rummet och ser era listor utbryter han:
+                <label>På hur många olika sätt ni kan välja vilka cachar ni ska ta?
+                    <input type=number name=diskret>
+                </label>
+            </p>
+        </section>
+
+        <section>
+            <!-- Java -->
+            <h2 id="programmeringsfärdighet-i-ett-objektorienterat-spåk-java">Programmeringsfärdighet i ett objektorienterat spåk – Java</h2>
+
+            <p>En dag bestämmer du dig för att kolla om dina Java-färdigheter sitter i, och skissar på en enkel prototyp för en geocache. Du bestämmer dig för att en geocache ska ha följande funktionalitet:</p>
+
+            <ol>
+                <li>En cache ska ha en unik kod</li>
+                <li>Man ska kunna kolla vad koden är.</li>
+                <li>En cache ska ha koordinater. För detta ska klassen <code>WSG84Coordinates</code> användas (som du tidigare använt till ett annat program).</li>
+                <li>Man ska kunna kolla vad koordinaterna är.</li>
+                <li>Man ska kunna ändra koordinater.</li>
+            </ol>
+
+            <p>Efter att ha knåpat en stund har du byggt din klass.</p>
+
+            <pre class="prettyprint"><code class="language-java hljs "><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Geocache</span> {</span>
+	<span class="hljs-keyword">private</span> String code;
+	<span class="hljs-keyword">private</span> WSG84Coordinates coordinates;
+
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> numberOfGeocaches;
+
+	<span class="hljs-keyword">public</span> <span class="hljs-title">Geocache</span>(WSG84Coordinates coordinates) {
+		code = <span class="hljs-string">"GC"</span> + numberOfGeocaches;
+		<span class="hljs-keyword">this</span>.coordinates = coordinates;
+	}
+
+	<span class="hljs-keyword">public</span> String <span class="hljs-title">getCode</span>() {
+		<span class="hljs-keyword">return</span> code;
+	}
+
+	<span class="hljs-keyword">public</span> WSG84Coordinates <span class="hljs-title">getCoordinates</span>() {
+		<span class="hljs-keyword">return</span> coordinates;
+	}
+
+	<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCoordinates</span>(WSG84Coordinates coordinates) {
+		coordinates = coordinates;
+	}
+}</code></pre>
+
+            <p>Du har dock ett problem, du har inte testat koden alls. Du bestämmer dig för att testa dig själv när du ändå testar koden. Du viktar funktionaliteten enligt ovan. För varje punkt du implementerat korrekt ger du dig själv så många poäng som funktionaliteten är viktad.
+                <label>Hur många poäng får du totalt?
+                    <input type=number name=java>
+                </label>
+            </p>
+        </section>
+
+        <!-- År 2 -->
+        <section>
+            <!-- Sysprog -->
+            <h2 id="systemnära-programmering">Systemnära programmering</h2>
+
+            <p>När du ska lösa en Mystery-cache inser du att du inte kan lösa problemet med papper och penna. När du söker på Internet ser du att någon skrivit kod som löser problemet. Hurra!</p>
+
+            <p>I användarhandledningen till programmet står det att programmet har ett kommandorads-gränssnitt. Eftersom du använder en dator med Unix-baserat operativsystem öppnar du upp terminalen, startar programmet och skriver in den information som stod i cachebeskrivningen. Någon millisekund senare skriver programmet ut lösningen på problemet i terminalen.</p>
+
+            <p>Några veckor senare stöter du på samma typ av problem igen, men den här gången är informationen betydligt större, så det skulle knappt gå att skriva in allt i terminalen. Dessutom känner du till att svaret också är betydligt fler tecken. Du kommer ihåg att någon gång har du hört att man skulle kunna göra så att programmet läser från en fil och skriver till en annan. Efter en stund har du flera olika förslag på hur man skulle kunna göra detta.
+                <label>Vilket av följande alternativ gör det du vill göra?
+                    <input type=number name=systemnara>
+                </label>
+            </p>
+
+            <ol>
+                <li><code>informationsfil | program | svarsfil</code></li>
+                <li><code>informationsfil &lt; program &gt; svarsfil</code></li>
+                <li><code>informationsfil # program * svarsfil</code></li>
+                <li><code>informationsfil \ program / svarsfil</code></li>
+            </ol>
+        </section>
+
+        <section>
+            <!-- MatStat -->
+            <h2 id="matematisk-statistik">Matematisk statistik</h2>
+
+            <p>En dag skissade linderborg upp en förenklad modell över vilken typ nästa cache hon tar har. Den senaste cachen hon tog var en Multi.
+                <label>Vad sannolikheten är att hon under minst två av de tre kommande dagarna tar en Mystery (eftersom de är så roliga!)? Svara med sex värdesiffror.
+                    <input type=number name=statistik>
+                </label>
+            </p>
+
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <a href="trad.svg" target="_blank"><img src="trad.svg" alt="Sannolikhetsfördelning Traditional" class="img-responsive"></a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="multi.svg" target="_blank"><img src="multi.svg" alt="Sannolikhetsfördelning Multi" class="img-responsive"></a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="myst.svg" target="_blank"><img src="myst.svg" alt="Sannolikhetsfördelning Mystery" class="img-responsive"></a>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <!-- Datorteknik -->
+            <h2 id="datorteknik">Datorteknik</h2>
+            <p>När du kommer till ett Field Puzzle hittar du följande.</p>
+
+            <div class="row">
+                <div class="col-xs-3 note">
+                    <p>Grattis, du har hittat cachen, nu ska du bara öppna den! I lådan med kodlås ligger loggboken. I den andra lådan ligger några elektriska komponenter fastsatta på ett numrerat pappersark samt en lapp med namnen på komponenterna numrerade. Det har dock blivit fel ordning på namnen. Kodlåset öppnas genom att, utgående från ordningen på namnen, ordna komponenterna rätt.</p>
+                </div>
+                <div class="col-xs-6">
+                    <a href="elektriska_komponenter.jpg" target="_blank"><img src="elektriska_komponenter_small.jpg" alt="Elektroniska komponenter." class="img-responsive img-rounded"></a>
+                </div>
+                <div class="col-xs-3 note">
+                    <ol>
+                        <li>Bipolär transistor</li>
+                        <li>LED</li>
+                        <li>Filmkondensator</li>
+                        <li>IC</li>
+                        <li>Sjusegmentsdisplay</li>
+                        <li>Potentiometer</li>
+                        <li>Elektrolytkondensator</li>
+                        <li>Resistor</li>
+                        <li>LCD</li>
+                    </ol>
+                </div>
+            </div>
+
+            <p>
+                <label>Vad är koden till låset?
+                    <input type=number name=datorteknik>
+                </label>
+            </p>
+        </section>
+
+
+        <!-- År 3 -->
+        <section>
+            <!-- Datakom -->
+            <h2 id="datorkommunikation">Datorkommunikation</h2>
+
+            <p>Ett protokoll kan definieras som de regler som gäller i ett visst sammanhang, t.ex. i vilken ordning besticken ska användas vid en flerrättersmåltid (facit: börja längst ut). Ett annat exempel är hur datorer ska prata med varandra i olika sammanhang. Till vardags använder vi oss av en mängd olika dataprotokoll, kanske utan att veta om att de finns och vad de är till för.</p>
+
+            <p>I ett scenario, där vi använder oss av Internets protokolluppsättning, har en person gått in på <a href="http://www.geocaching.com/" target="_blank">www.geocaching.com</a>. Detta via en dator som är uppkopplad via Wi-Fi. Vilka av följande protokoll<span class="footnote">1</span> används då i respektive lager? Det är bara ett i varje lager som eftersöks.</p>
+
+            <ol>
+                <li>SMTP</li>
+                <li>PPP</li>
+                <li>PPTP</li>
+                <li>MAC</li>
+                <li>IP</li>
+                <li>UDP</li>
+                <li>SIP</li>
+                <li>ARP</li>
+                <li>TCP</li>
+                <li>HTTP</li>
+            </ol>
+
+            <ul>
+                <li>
+                    <label>Applikationslagret:
+                        <input type=number name=datakom_app>
+                    </label>
+                </li>
+                <li>
+                    <label>Transportlagret:
+                        <input type=number name=datakom_trans>
+                    </label>
+                </li>
+                <li>
+                    <label>Internetlagret:
+                        <input type=number name=datakom_internet>
+                    </label>
+                </li>
+                <li>
+                    <label>Länklagret:
+                        <input type=number name=datakom_lank>
+                    </label>
+                </li>
+            </ul>
+
+            <p class="footnote">1: Naturligtvis används fler protokoll än dessa.</p>
+
+        </section>
+
+        <section>
+            <!-- LinAlg -->
+            <h2 id="linjär-algebra">Linjär algebra</h2>
+
+            <p>Det har dykt upp en bonuscache. Eftersom du har tagit alla cachar i serien så har du nu en samling siffor och bokstäver, som enligt cachebeskrivningen ska ge dig koordinaterna <em>och</em> på vilken höjd cachen sitter!</p>
+
+            <ul class="linear">
+                <li>
+                    <script type="math/tex" id="MathJax-Element-206">10x + 2y + z =534.774</script>
+                </li>
+                <li>
+                    <script type="math/tex" id="MathJax-Element-207">-x+9y-z=130.751</script>
+                </li>
+                <li>
+                    <script type="math/tex" id="MathJax-Element-208">x+4y+z=128.3</script>
+                </li>
+            </ul>
+
+            <p>Den viktiga och brådskande frågan är alltså, vilka värden har följande?</p>
+            <ul>
+                <li>
+                    <label>
+                        <script type="math/tex" id="MathJax-Element-209">x</script>:
+                        <input type=number name=linjar_x>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <script type="math/tex" id="MathJax-Element-210">y</script>:
+                        <input type=number name=linjar_y>
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <script type="math/tex" id="MathJax-Element-211">z</script>:
+                        <input type=number name=linjar_z>
+                    </label>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <!-- Dark -->
+            <h2 id="datorarkitektur">Datorarkitektur</h2>
+
+            <p>Ibland kan man bli riktigt insnöad och tro att geocachar är de enda cachar som finns. Men nu ska vi titta närmare på en annan typ av cache!</p>
+
+            <p>I datorer använder man sig av cachar för att tiden det tar att "minnas"<span class=footnote>1</span> något ska kunna förkortas. Man använder sig av en minneshierarki där det i botten finns ett stort och långsamt minne, som rymmer alla "minnen", och bygger på med mindre och snabbare minnen, som rymmer färre och färre "minnen". Cachar innehåller, beroende på deras typ, nyligen använda eller ofta använda "minnen". När man försöker "minnas" något börjar man att kolla om man hittar "minnet" i det snabbaste minnet. Hittar man det där så har man sparat massor av tid. Hittar man det inte där så har man gjort en miss. Det innebär att man måste leta sig nedåt i minneshierarkin för att hitta igen "minnet". Det gör att det kan ta längre tid att hitta ett "minne" om man har en minneshierarki än om man bara har ett minne om man missar hela tiden. Minnehierarkierna är dock uppbyggda för att genomsnittstiden för att hitta ett "minne" ska minskas.</p>
+
+            <p>I vissa tidskritiska applikationer är missar så pass dyrbara att det är värt att till varje pris undvika dem. Det finns olika tekniker för att göra detta, men huvudsyftet med dem är att se till att det man vill "minnas" finns tillgängligt i det snabbaste minnet när man vill "minnas" det.</p>
+
+            <p>
+                <label>Ordna följande minnestyper efter åtkomsttid från kortast till längst, från vänster till höger, t.ex.: 43512.
+                    <input type=number name=dark_atkomst>
+                </label>
+            </p>
+            <ol>
+                <li>L1</li>
+                <li>Sekundärminne</li>
+                <li>L3</li>
+                <li>Primärminne</li>
+                <li>L2</li>
+            </ol>
+            <p>
+                <label>Vilka av ovanstående minnestyper är inte flyktiga? M.a.o. vilka av dessa minnestyper behåller information medan de inte är strömsatta? Använd samma ordning som i ovanstående svar. Ej flyktiga minnestyper:
+                    <input type=number name=dark_flyktighet>
+                </label>
+            </p>
+            <p class=footnote>1: För att beskriva datorminnen med en analogi används i texten uttrycket "minnas" istället för att "komma åt". Dessutom används uttrycket "minne" istället för data. När man försöker "minnas" ett "minne" försöker man alltså komma åt data.</p>
+        </section>
+
+        <section>
+            <!-- TVB -->
+            <h2 id="numeriska-beräkningar">Numeriska beräkningar</h2>
+
+            <p>I staden där du bor finns det en geocachare som bara lägger ut Mystery-cachar med matematiktema; det är nästan så att man vill kasta stenar i COs fönster! Den senaste ser ut såhär:</p>
+
+            <p>Givet en icke-linjär funktion
+                <script type="math/tex" id="MathJax-Element-212">f\left(x\right)=x^2-9</script> vill vi hitta ett värde
+                <script type="math/tex" id="MathJax-Element-213">r</script> sådant att
+                <script type="math/tex" id="MathJax-Element-214">f\left(r\right)=0</script>. Använd sekantmetoden där
+                <script type="math/tex" id="MathJax-Element-215">r_0=0</script> och
+                <script type="math/tex" id="MathJax-Element-216">r_1=1</script>.</p>
+
+            <ul>
+                <li>
+                    <label>Vilket värde har
+                        <script type="math/tex" id="MathJax-Element-217">r_2</script>?
+                        <input type=number name=sekant_2>
+                    </label>
+                </li>
+                <li>
+                    <label>Vilket värde har
+                        <script type="math/tex" id="MathJax-Element-218">r_3</script>?
+                        <input type=number name=sekant_3>
+                    </label>
+                </li>
+                <li>
+                    <label>Vid vilken iteration<span class=footnote>1</span> har vi hittat
+                        <script type="math/tex" id="MathJax-Element-219">r</script>, om vi avrundar till två värdesiffror?
+                        <input type=number name=sekant_konvergerat>
+                    </label>
+                </li>
+            </ul>
+            <p class=footnote>1:
+                <script type="math/tex" id="MathJax-Element-220">r_2</script> är andra iterationen,
+                <script type="math/tex" id="MathJax-Element-221">r_3</script> är tredje iterationen, o.s.v.</p>
+        </section>
+
+        <section>
+            <!-- HS -->
+            <h2 id="programmeringsfärdighet-i-ett-funktionellt-språk-haskell">Programmeringsfärdighet i ett funktionellt språk - Haskell</h2>
+
+            <p>Innan det fanns tillgång till <a href="http://project-gc.com" target="_blank">Project-GC</a> beräknade du själv all din statistik. Du kikar nu tillbaka på kod du skrivit och inser att du borde ha dokumenterat den lite bättre. Du är inte riktigt säker på vad nedanstående kod gör (kanske borde du ha namngett saker lite bättre?).
+
+                <label>Vilket värde har <code>f[1,2,3,4,5]</code>?
+                    <input type=number name=haskell>
+                </label>
+            </p>
+
+            <pre class="prettyprint"><code class="language-haskell hljs "><span class="hljs-title">f</span> :: (<span class="hljs-type">Ord</span> a) =&gt; [a] -&gt; a  
+<span class="hljs-title">f</span> [] = error <span class="hljs-string">"Empty list"</span>  
+<span class="hljs-title">f</span> [x] = x  
+<span class="hljs-title">f</span> (x:xs)   
+	| x &gt; a = x  
+	| otherwise = a  
+<span class="hljs-keyword">where</span> a = f xs</code></pre>
+        </section>
+
+        <section>
+            <!-- PVT -->
+            <h2 id="programvaruteknik">Programvaruteknik</h2>
+            <p>I undersökningar har det visat sig att 67% av alla kostnader för mjukvaruprojekt kommer från underhållet av mjukvaran. Att komma fram till vad man ska göra, designa det och sedan bygga det står alltså bara för 33% av alla kostnader. Ett sätt att se till att man bygger saker på rätt sätt är att modellera dem. Unified Modeling Language är ett generaliserat språk för att göra detta. Nu gäller det att para ihop diagramtyperna med rätt diagram.</p>
+
+            <ul>
+                <li>
+                    <label>Vilket diagram är ett aktivitetsdiagram?
+                        <input type=number name=pvt_aktivitet>
+                    </label>
+                </li>
+                <li>
+                    <label>Vilket diagram är ett tillståndsdiagram?
+                        <input type=number name=pvt_tillstand>
+                    </label>
+                </li>
+                <li>
+                    <label>Vilket diagram är ett användarfallsdiagram?
+                        <input type=number name=pvt_anvandarfall>
+                    </label>
+                </li>
+            </ul>
+
+            <div class="row" id="diagram">
+                <div class="col-xs-4">
+                    <figure>
+                        <a href="diagram_a.png" target="_blank"><img src="diagram_a.png" alt="Diagram över hur man tar en cache." class="img-responsive"></a>
+                        <figcaption>Diagram 1.</figcaption>
+                    </figure>
+                </div>
+                <div class="col-xs-4">
+                    <figure>
+                        <a href="diagram_b.png" target="_blank"><img src="diagram_b.png" alt="Diagram över geocaching.com." class="img-responsive"></a>
+                        <figcaption>Diagram 2.</figcaption>
+                    </figure>
+                </div>
+                <div class="col-xs-4">
+                    <figure>
+                        <a href="diagram_c.png" target="_blank"><img src="diagram_c.png" alt="Diagram över geocache." class="img-responsive"></a>
+                        <figcaption>Diagram 3.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beräkna koordinater -->
+        <section>
+            <h2 id="done">Beräkna koordinater</h2>
+            <p>Om du har svarat på alla frågor är du nu redo att beräkna koordinaterna.
+                <input type=submit value="Beräkna koordinaterna!">
+            </p>
+            <p id="coordinates"></p>
+        </section>
+    </div>
+</body>
+
+</html>
