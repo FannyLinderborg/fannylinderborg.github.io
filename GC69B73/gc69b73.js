@@ -41,7 +41,7 @@ var calculate_coordinates = function(e) {
     }
 
     var c = Number($("input[name=c]").val());
-    var analys = Number($("input[name=analys]").val());
+    var analys = Number($("input[name=analys]").val()) + 0.34;
     var doa = Number($("input[name=doa]").val());
     var diskret = Number($("input[name=diskret]").val());
     var java = Number($("input[name=java]").val());
